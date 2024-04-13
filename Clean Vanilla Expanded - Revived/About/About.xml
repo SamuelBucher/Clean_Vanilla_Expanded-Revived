@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Clean Vanilla Expanded - Revived</name>
+  <author>SamBucher</author>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
+  <packageId>SamBucher.CleanVE2</packageId>
+  <description>Clean Vanilla Expanded is back.
+  </description>
+  <modDependencies>
+    <li>
+      <packageId>imranfish.xmlextensions</packageId>
+      <displayName>XML Extensions</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+	<li>VanillaExpanded.VWE</li>
+	<li>VanillaExpanded.VWEC</li>
+	<li>VanillaExpanded.VWEQ</li>
+	<li>VanillaExpanded.VWEG</li>
+	<li>VanillaExpanded.VARME</li>
+    <li>VanillaExpanded.VFECore</li>
+	<li>VanillaExpanded.VFEArchitect</li>
+	<li>VanillaExpanded.VFEFarming</li>
+	<li>VanillaExpanded.VFEMedical</li>
+	<li>VanillaExpanded.VFEPower</li>
+	<li>VanillaExpanded.VFEProduction</li>
+	<li>VanillaExpanded.VFESecurity</li>
+	<li>VanillaExpanded.VFESpacer</li>
+	<li>VanillaExpanded.VCEF</li>
+	<li>vanillaexpanded.vcookestews</li>
+	<li>OskarPotocki.VFE.Mechanoid</li>
+	<li>OskarPotocki.VanillaExpanded.IdeologyPatches</li>
+	<li>OskarPotocki.VanillaExpanded.RoyaltyPatches</li>
+	<li>Project RimFactory Revived</li>
+	<li>oskarpotocki.vfe.vikings</li>
+	<li>oskarpotocki.vanillafactionsexpanded.medievalmodule</li>
+	<li>oskarpotocki.vfe.tribals</li>
+	<li>spdskatr.projectrimfactory</li>
+	<li>garethp.replacestuffcompatibility</li>
+	<li>imranfish.xmlextensions</li>
+	<li>niilo007.niilosqol</li>
+	<li>redmattis.bsfurniture</li>
+  </loadAfter>
+  <incompatibleWith>
+	<li>CETeam.CombatExtended</li>
+  </incompatibleWith>
+</ModMetaData>

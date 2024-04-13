@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- Buildings_Misc.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VFE_Scarecrow" or
+		defName="VFE_AnimalFeeder"]</xpath>
+	</Operation>
+	
+	
+	<!-- Buildings_Growers_Tilable.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<!--defName="VFE_PlanterBox_Tilable" or-->
+		<xpath>/Defs/ThingDef[
+		defName="VFE_Hydroponics_Tilable" or
+		defName="VFE_Ecosystem_Tilable"]</xpath>
+	</Operation>
+	
+	
+	<!-- Buildings_Growers.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_PlanterBox"]/costStuffCount</xpath>
+		<value>
+			<costStuffCount>80</costStuffCount>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_PlanterBox"]/fertility</xpath>
+		<value>
+			<fertility>0.70</fertility>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_PlanterBox"]/statBases/Cleanliness</xpath>
+		<value>
+			<Cleanliness>-8</Cleanliness>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_Ecosystem"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+		<value>
+			<basePowerConsumption>400</basePowerConsumption>
+		</value>
+	</Operation>
+	
+	
+	<!-- ResearchProjects_VFE.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[defName="VFE_Res_FarmingTechniques"]</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ResearchProjectDef[defName="VFE_Res_AdvancedHydroponics"]/baseCost</xpath>
+		<value>
+			<baseCost>4000</baseCost>
+		</value>
+	</Operation>
+	
+	<!-- Dubs Bad Hygiene compatability -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Dubs Bad Hygiene</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!-- Buildings_Misc.xml -->
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[defName="VFE_Sprinkler"]</xpath>
+			</li>
+
+			<!-- ResearchProjects_VFE.xml -->
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ResearchProjectDef[defName="VFE_Res_Sprinkler"]</xpath>
+			</li>
+
+			<!-- Motes.xml -->
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[defName="VFEF_Mote_SprinklerWater"]</xpath>
+			</li>
+		</operations>
+		</match>
+	</Operation>
+
+</Patch>

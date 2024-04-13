@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- Achievements.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/AchievementsExpanded.AchievementDef[
+		defName="Juggernaut" or
+		defName="sierra117"]</xpath>
+	</Operation>
+
+	<!-- ResearchProjects_Various.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Apparel Expanded</li>
+	</mods>
+	<nomatch Class="PatchOperationSequence">
+	<operations>
+		<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<xpath>/Defs/ResearchProjectDef[defName="VAE_MilitaryClothing"]</xpath>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ResearchProjectDef[defName="VAE_MlitaryCamouflage"]/prerequisites</xpath>
+			<value>
+				<prerequisites>
+					<li>ComplexClothing</li>
+				</prerequisites>
+			</value>
+		</li>
+		
+		<!-- ThingCategories.xml -->
+		<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<xpath>/Defs/ThingCategoryDef[defName="VAE_BootsAndGloves"]</xpath>
+		</li>
+	</operations>
+	</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ResearchProjectDef[defName="VAE_HazardProtection"]/prerequisites</xpath>
+		<value>
+			<prerequisites>
+				<li>ComplexClothing</li>
+				<li>Fabrication</li>
+			</prerequisites>
+		</value>
+	</Operation>
+
+	<!-- Armor_Footwear.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VAE_Footwear_PlateBoots" or
+		defName="VAE_Footwear_MarineBoots"]</xpath>
+	</Operation>
+
+	<!-- Armor_Handwear.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VAE_Handwear_PlateGloves" or
+		defName="VAE_Handwear_MarineGloves"]</xpath>
+	</Operation>
+
+	<!-- Armor_Industrial.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/costList/Steel</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/statBases/Insulation_Cold</xpath>
+		<value>
+			<Insulation_Cold>0</Insulation_Cold>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/statBases/WorkToMake</xpath>
+		<value>
+			<WorkToMake>12000</WorkToMake>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/statBases</xpath>
+		<value>
+			<Flammability>1.5</Flammability>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/recipeMaker/skillRequirements/Crafting</xpath>
+		<value>
+			<Crafting>4</Crafting>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<li>CraftingSpot</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/costList</xpath>
+		<value>
+			<costList>
+				<DevilstrandCloth>60</DevilstrandCloth>
+				<Steel>40</Steel>
+				<ComponentIndustrial>2</ComponentIndustrial>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/costStuffCount</xpath>
+		<value>
+			<costStuffCount>40</costStuffCount>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets</xpath>
+		<value>
+			<WorkSpeedGlobal>-0.2</WorkSpeedGlobal>
+		</value>
+	</Operation>
+
+	<!-- Armor_Medieval.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VAE_Apparel_Gambeson" or
+		defName="VAE_Apparel_PlateShoulderpads" or
+		defName="VAE_Apparel_Chestplate" or
+		defName="VAE_Apparel_Chainmail"]</xpath>
+	</Operation>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Medieval</li>
+		</mods>
+		<nomatch Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]</xpath>
+			</li>
+		</operations>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]/stuffCategories</xpath>
+		<value>
+			<li>Woody</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]/recipeMaker/skillRequirements/Crafting</xpath>
+		<value>
+			<Crafting>7</Crafting>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<value>
+			<ShootingAccuracyPawn>-1.0</ShootingAccuracyPawn>
+		</value>
+	</Operation>
+
+	<!-- Armor_Neolithic.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_StoneWarMask"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>0.32</ArmorRating_Sharp>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]/statBases/EquipDelay</xpath>
+		<value>
+			<EquipDelay>6</EquipDelay>
+		</value>
+	</Operation>
+
+	<!-- Armor_Spacer.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VAE_Headgear_TrooperHelmet" or
+		defName="VAE_Apparel_TrooperArmor"]</xpath>
+	</Operation>	
+	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName="VAE_Headgear_HeavyMarineHelmet" or
+				defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
+			</li>
+
+			<!-- Royalty.xml -->			
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName="VAE_Headgear_RoyalTrooperHelmet" or
+				defName="VAE_Apparel_RoyalTrooperArmor" or
+				defName="VAE_Headgear_RoyalSiegeHelmet" or
+				defName="VAE_Apparel_RoyalSiegeArmor"]</xpath>
+			</li>
+			
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/PawnKindDef[@Name="CataphractBase"]/apparelRequired/li[
+				text()="VAE_Handwear_MarineGloves" or 
+				text()="VAE_Footwear_MarineBoots"]</xpath>
+			</li>
+			
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/PawnKindDef[@Name="ImperialFighterBase"]/apparelRequired/li[
+				text()="VAE_Footwear_PlateBoots"]</xpath>
+			</li>
+			
+			<!-- ResearchProjects_Various.xml -->
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ResearchProjectDef[
+				defName="VAE_SiegebreakerArmor" or
+				defName="VAE_LeatherTanning"]</xpath>
+			</li>
+
+			<!-- Achievements.xml -->
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/AchievementsExpanded.AchievementDef[defName="leatherThatsKinky"]</xpath>
+			</li>
+
+			<!-- Armor_Medieval.xml -->
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[defName="VAE_Apparel_QuiltedVest"]</xpath>
+			</li>
+		</operations>
+		</match>
+		<nomatch Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VAE_Apparel_QuiltedVest"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<value>
+					<StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VAE_Apparel_QuiltedVest"]/statBases/Mass</xpath>
+				<value>
+					<Mass>1.4</Mass>
+				</value>
+			</li>
+		</operations>
+		</nomatch>
+	</Operation>
+	
+	
+
+	<!-- Headgear_Industrial.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VAE_Headgear_Balaclava"]</xpath>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/costList/ComponentIndustrial</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/statBases/Insulation_Cold</xpath>
+		<value>
+			<Insulation_Cold>0</Insulation_Cold>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/statBases/WorkToMake</xpath>
+		<value>
+			<WorkToMake>2500</WorkToMake>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/statBases</xpath>
+		<value>
+			<Flammability>1.5</Flammability>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/recipeMaker/skillRequirements/Crafting</xpath>
+		<value>
+			<Crafting>4</Crafting>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<li>CraftingSpot</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<bodyPartGroups>
+				<li>FullHead</li>
+			</bodyPartGroups>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/costList</xpath>
+		<value>
+			<DevilstrandCloth>30</DevilstrandCloth>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/costStuffCount</xpath>
+		<value>
+			<costStuffCount>20</costStuffCount>
+		</value>
+	</Operation>
+
+</Patch>
