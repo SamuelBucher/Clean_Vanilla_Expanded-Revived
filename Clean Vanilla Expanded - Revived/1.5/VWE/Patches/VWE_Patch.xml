@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- IndustrialGrenadesEnhanced.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_SmokeGrenade"]/statBases/WorkToMake</xpath>
+		<value>
+			<WorkToMake>12000</WorkToMake>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_SmokeGrenade"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<recipeUsers>
+				<li>TableMachining</li>
+			</recipeUsers>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_SmokeGrenade"]/costList</xpath>
+		<value>
+			<costList>
+			  <Chemfuel>80</Chemfuel>
+			  <Steel>10</Steel>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="VWE_SmokeGrenade"]/recipeMaker/researchPrerequisite</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded - Grenades</li>
+		</mods>
+		<nomatch Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				@Name="BaseOPToxMakeableGrenade" or
+				@Name="BaseOPToxGrenadeProjectile" or
+				defName="VWE_ToxicGrenade" or
+				defName="VWE_Projectile_ToxicGrenade" or
+				defName="VWE_FlashGrenade" or
+				defName="VWE_Projectile_FlashGrenade"]</xpath>
+			</li>
+
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ResearchProjectDef[defName="VWE_TacticalGrenades"]</xpath>
+			</li>
+		</operations>
+		</nomatch>
+	</Operation>	
+
+	<!-- MeleeMedieval.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VWE_MeleeWeapon_Pickaxe" or
+		defName="VWE_MeleeWeapon_Hammer" or
+		defName="VWE_MeleeWeapon_BattleAxe" or
+		defName="VWE_MeleeWeapon_Halberd"]</xpath>
+	</Operation>
+
+<!-- MeleeNeolithic.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="VWE_MeleeWeapon_Axe"]</xpath>
+	</Operation>
+
+<!-- RangedIndustrialConsumable.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_RocketLauncher"]/statBases/WorkToMake</xpath>
+		<value>
+			<WorkToMake>20000</WorkToMake>
+		</value>
+	</Operation>
+
+<!-- RangedMedieval.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Arrow_Bolt"]/projectile/armorPenetrationBase</xpath>
+		<value>
+			<armorPenetrationBase>0.3</armorPenetrationBase>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Musket" or defName="VWE_Gun_Flintlock"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<recipeUsers Inherit="False">
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		</value>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VWE_Throwing_Knives" or
+		defName="VWE_FlyingBlade" or
+		defName="VWE_Tool_Whip" or
+		defName="VWE_WhipSlash"]</xpath>
+	</Operation>
+
+<!-- RangedNeolithic.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VWE_Throwing_Rocks" or
+		defName="VWE_Rock"]</xpath>
+	</Operation>
+
+	<!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Medieval</li>
+		</mods>
+		<nomatch Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName="VWE_Bow_Long" or
+				defName="VWE_Arrow_Long"]</xpath>
+			</li>
+			
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ResearchProjectDef[defName="VWE_Longbow"]</xpath>
+			</li>
+		</operations>
+		</nomatch>
+	</Operation> -->
+
+<!-- RangedSpacer.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargePistol" or defName="VWE_Gun_ChargeShotgun" or defName="VWE_Gun_ChargeSMG"]/recipeMaker/skillRequirements</xpath>
+		<value>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargeLMG" or defName="VWE_Gun_ChargeSniperRifle" or defName="VWE_Gun_ChargeMinigun"]/recipeMaker/skillRequirements</xpath>
+		<value>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bullet_ChargeLMG"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>15</damageAmountBase>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bullet_ChargeSMG"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>12</damageAmountBase>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bullet_ChargePistol"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>12</damageAmountBase>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bullet_ChargeSniperRifle"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>15</damageAmountBase>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bullet_ChargeMinigun"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>12</damageAmountBase>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bullet_ChargeMinigun"]/projectile/armorPenetrationBase</xpath>
+		<value>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargeMinigun"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MoveSpeed>-0.25</MoveSpeed>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+	<!-- researchPrerequisite to researchPrerequisites? -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargeMinigun"]/recipeMaker/researchPrerequisite</xpath>
+		<value>
+			<researchPrerequisite Inherit="False"></researchPrerequisite>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargeMinigun"]/recipeMaker</xpath>
+		<value>
+			<researchPrerequisites Inherit="False">
+			  <li>ChargedShot</li>
+			  <li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</value>
+	</Operation>
+
+<!-- MeleeIndustrial.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VWE_MeleeWeapon_Shovel" or
+		defName="VWE_MeleeWeapon_Baton" or
+		defName="VWE_MeleeWeapon_CombatKnife" or
+		defName="VWE_MeleeWeapon_Wrench" or
+		defName="VWE_MeleeWeapon_Cleaver" or
+		defName="VWE_MeleeWeapon_Scalpel"]</xpath>
+	</Operation>
+
+<!-- RangedIndustrialExpanded.xml -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VWE_Bow_Compound"]</xpath>
+		<value>
+			<techLevel Inherit="False">Industrial</techLevel>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Bow_Compound"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+			</recipeUsers>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_GrenadeLauncher"]/statBases/WorkToMake</xpath>
+		<value>
+			<WorkToMake>20000</WorkToMake>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Flamethrower"]/costList/Chemfuel</xpath>
+		<value>
+			<Chemfuel>40</Chemfuel>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_AntiMaterialRifle"]/projectile/armorPenetrationBase</xpath>
+		<value>
+			<armorPenetrationBase>0.70</armorPenetrationBase>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_AntiMaterialRifle"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>30</damageAmountBase>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]/costList/ComponentIndustrial</xpath>
+		<value>
+			 <ComponentIndustrial>10</ComponentIndustrial>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]/equippedStatOffsets</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]/recipeMaker/skillRequirements</xpath>
+		<value>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VWE_Bullet_HandCannon" or
+		defName="VWE_Gun_HandCannon" or
+		defName="VWE_Bullet_CombatHandgun" or
+		defName="VWE_CombatHandgun" or
+		defName="VWE_Bullet_SawedOffShotgun" or
+		defName="VWE_SawedOffShotgun" or
+		defName="VWE_Gun_FireExtinguisher" or
+		defName="VWE_Bullet_FireExtinguisher" or
+		defName="VWE_Bullet_SemiAutomaticRifle" or
+		defName="VWE_Gun_SemiAutomaticRifle" or
+		defName="VWE_Bullet_LightSMG" or
+		defName="VWE_Gun_LightSMG" or
+		defName="VWE_Bullet_SMG" or
+		defName="VWE_Gun_SMG" or
+		defName="VWE_Bullet_ServiceRifle" or
+		defName="VWE_Gun_ServiceRifle" or
+		defName="VWE_Bullet_BattleRifle" or
+		defName="VWE_Gun_BattleRifle" or
+		defName="VWE_Bullet_Carbine" or
+		defName="VWE_Gun_Carbine" or
+		defName="Bullet_MarksmanRifle" or
+		defName="VWE_Gun_MarksmanRifle"]</xpath>
+	</Operation>
+
+<!-- RangedSpacerConsumable.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargeRocketLauncher"]/recipeMaker/recipeUsers</xpath>
+		<value>
+		  <recipeUsers Inherit="False">
+			<li>FabricationBench</li>
+		  </recipeUsers>
+		</value>
+	</Operation>
+	
+
+<!-- ResearchProjects_Various.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ResearchProjectDef[defName="VWE_Crossbow"]/prerequisites</xpath>
+		<value>
+			<prerequisites>
+				<li>Greatbow</li>
+				<li>Smithing</li>
+			</prerequisites>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ResearchProjectDef[defName="VWE_CompoundBow"]/prerequisites</xpath>
+		<value>
+			<prerequisites>
+				<li>Machining</li>
+				<li>Greatbow</li>
+			</prerequisites>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ResearchProjectDef[defName="VWE_Gunpowder"]</xpath>
+		<value>
+			<prerequisites>
+				<li>Smithing</li>
+			</prerequisites>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Security</li>
+		</mods>
+		<nomatch Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ResearchProjectDef[defName="VWE_TrenchWarfare"]</xpath>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ResearchProjectDef[defName="VWE_HeavyWeapons"]/prerequisites</xpath>
+		<value>
+			<prerequisites>
+				<li>PrecisionRifling</li>
+			</prerequisites>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[
+		defName="VWE_Tools" or
+		defName="VWE_SpecializedFirearms"]</xpath>
+	</Operation>
+
+<!-- Achievements.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	  <xpath>Defs/AchievementsExpanded.AchievementDef[defName="poshRockLobber" or defName="gunsGallore"]</xpath>
+	</Operation>
+	
+</Patch>

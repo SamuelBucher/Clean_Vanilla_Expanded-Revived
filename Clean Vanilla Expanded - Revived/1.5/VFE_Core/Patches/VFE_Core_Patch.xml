@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>		
+
+	<!-- Buildings_BasicBeds.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Bed_Simple" or
+		defName="Bed_StoneSlab"]</xpath>
+	</Operation>
+
+	<!-- Buildings_Royal.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Bed_Ergonomic" or
+		defName="Bed_DoubleErgonomic" or
+		defName="Table_Wardrobe"]</xpath>
+	</Operation>
+
+	<!-- Buildings_Modern.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Seat_ModernChair"]/statBases/Comfort</xpath>
+		<value>
+			<Comfort>0.9</Comfort>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Seat_ModernChair"]/statBases/Beauty</xpath>
+		<value>
+		</value>
+	</Operation>
+
+	<!-- Buildings_Misc.xml -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="Light_Streetlamp"]/costList</xpath>
+		<value>
+		<ComponentIndustrial>1</ComponentIndustrial>
+		</value>
+	</Operation>
+	<!--<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Misc_FileCabinet" or
+		defName="Shelf_WeaponRack" or
+		defName="Bin_Small" or
+		defName="Bin_Large"]</xpath>
+	</Operation>-->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Misc_FileCabinet" or
+		defName="Shelf_WeaponRack"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[
+		defName="Bin_Small" or
+		defName="Bin_Large"
+		]/designationCategory</xpath>
+		<value>			
+			<designationCategory>
+			</designationCategory>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Bin_Small" or
+		defName="Bin_Large"
+		]/researchPrerequisites</xpath>
+	</Operation>
+	
+	<!-- Buildings_Joy.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Joy_Arcade" or
+		defName="Joy_InudstrialComputer" or
+		defName="Joy_ModernComputer" or
+		defName="Joy_RouletteTable"]</xpath>
+	</Operation>
+	
+	<!-- Jobs_Joy.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/JobDef[
+		defName="Play_Roulette" or
+		defName="Play_Arcade" or
+		defName="Play_ComputerIndustrial" or
+		defName="Play_ComputerModern"]</xpath>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/JoyGiverDef[
+		defName="Play_Roulette" or
+		defName="Play_Arcade" or
+		defName="Play_ComputerIndustrial" or
+		defName="Play_ComputerModern"]</xpath>
+	</Operation>
+
+	<!-- Buildings_EndTableOperationght.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="Table_LightEndTable"]</xpath>
+	</Operation>
+	
+	<!-- Buildings_Campfire.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="Stone_Campfire"]</xpath>
+	</Operation>
+	
+	<!-- Buildings_BasicTables.xml -->
+	<!--<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="Table_Counter"]</xpath>
+	</Operation>-->
+	
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="Table_1x1c"]/researchPrerequisites</xpath>
+	</Operation>
+
+	<!-- Buildings_BasicSeats.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="Seat_Bench" or
+		defName="Seat_SquareChair"]</xpath>
+	</Operation>
+
+
+	<!-- ThoughtDefs -->
+	
+	<!-- Thoughts_Situation_Special.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName="Thought_EffectRadio"]/stages/li[baseMoodEffect="3"]/baseMoodEffect</xpath>
+		<value>
+		<baseMoodEffect>2</baseMoodEffect>
+		</value>
+	</Operation>	
+	
+	
+	<!-- WorkGiverDefs -->
+	
+	<!-- WorkGiver_CampFire.xml.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/WorkGiverDef[
+		defName="DoBillsCookStone_Campfire" or
+		defName="DoBillsHaulStone_Campfire"]</xpath>
+	</Operation>
+	
+
+	<!-- ResearchDefs -->
+	
+	<!-- ResearchProjects.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[
+		defName="MF_WasteDisposal" or
+		defName="MF_BasicFurniture"]</xpath>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[defName="ComplexFurniture"]/prerequisites</xpath>
+	</Operation>
+
+
+	<!-- Patches -->
+	
+	<!-- Buildings_Campfire.xml -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Cooking Expanded - Stews</li>
+		</mods>
+		<match Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/RecipeDef[
+		defName="VCE_CookStewSimple" or 
+		defName="VCE_CookStewFine" or 
+		defName="VCE_CookStewLavish"
+		]/recipeUsers/li[text()="Stone_Campfire"]</xpath>
+		</match>
+	</Operation>
+
+	<!-- Bedroom_Furniture.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="HospitalBed" or 
+		defName="Bedroll" or 
+		defName="BedrollDouble" or 
+		defName="Bed_Kingsize"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
+		text()="Table_Wardrobe" or 
+		text()="Table_LightEndTable"]</xpath>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[@Name = "BasicBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
+		text()="Table_Wardrobe" or 
+		text()="Table_LightEndTable" or
+		text()="Table_RoyalDresser" or 
+		text()="Table_RoyalEndTable"]</xpath>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[defName="HospitalBed" or defName="Bedroll" or defName="BedrollDouble"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
+		text()="Table_RoyalDresser" or 
+		text()="Table_RoyalEndTable"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="RoyalBed"]</xpath>
+		<value>
+			<comps Inherit="False">
+			  <li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+				  <li>Table_RoyalEndTable</li>
+				  <li>Table_RoyalDresser</li>
+				  <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+				</linkableFacilities>
+			  </li>
+			</comps>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName = "SimpleResearchBench" or
+		defName = "HiTechResearchBench"
+		]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
+		text()="Misc_FileCabinet"]</xpath>
+	</Operation>
+
+
+  <!-- Royalty compatability -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>
+            /Defs/RoyalTitleDef[defName="Acolyte" or defName="Knight" or defName="Praetor" or defName="Baron" or defName="Count" or @Name="BaseEmpireTitleNPC"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][disablingPrecepts/li="SlabBed_Preferred"]/things/li[
+            text()="Bed_DoubleErgonomic"]
+          </xpath>
+        </li>
+
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/RoyalTitleDef[defName="Knight" or defName="Praetor" or defName="Baron" or defName="Count" or @Name="BaseEmpireTitleNPC"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][things/li="EndTable"]/things/li[text()="Table_LightEndTable"]</xpath>
+        </li>
+
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/ThingDef[defName="Campfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+
+  <!-- Ideology compatability -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ideology</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/RitualObligationTargetFilterDef[defName="RitualSpotOrCampfireParty"]/thingDefs/li[text()="Stone_Campfire"]</xpath>
+        </li>
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/RitualOutcomeEffectDef[defName="CelebrationPartyDanceDrum"]/comps/li[@Class="RitualOutcomeComp_RitualTargetDefs"]/defs/li[text()="Stone_Campfire"]</xpath>
+        </li>
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/RitualBehaviorDef[defName="CelebrationPartyDanceDrum"]/stages/li[defaultDuty="PartyDance"]/failTriggers/li[onlyIfTargetIsOfDef="Stone_Campfire"]</xpath>
+        </li>
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/ThingDef[defName="Drum"]/placeWorkers/li[text()="VEIP.PlaceWorker_LinkToStoneCampfire"]</xpath>
+        </li>
+        <li Class="XmlExtensions.PatchOperationSafeRemove">
+          <xpath>/Defs/ThingDef[defName="Stone_DarklightCampfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+  
+
+  <!-- VEF - Empire compatability -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Empire</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="XmlExtensions.PatchOperationSafeRemove">
+                <xpath>
+                  Defs/RoyalTitleDef[defName = "Duke" or  defName = "VFEE_Archcount" or defName = "Consul" or defName = "VFEE_Marquess" or defName = "VFEE_Archduke" or defName = "VFEE_Magister" or defName = "VFEE_Despot" or defName = "VFEE_HighStellarch"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][disablingPrecepts/li="SlabBed_Preferred"]/things
+                  /li[
+                  text()="Bed_DoubleErgonomic"
+                  ]
+                </xpath>
+              </li>
+              <li Class="XmlExtensions.PatchOperationSafeRemove">
+                <xpath>
+                  Defs/RoyalTitleDef[defName = "Duke" or  defName = "VFEE_Archcount" or defName = "Consul" or defName = "VFEE_Marquess" or defName = "VFEE_Archduke" or defName = "VFEE_Magister" or defName = "VFEE_Despot" or defName = "VFEE_HighStellarch"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][things/li="EndTable"]/things
+                  /li[
+                  text()="Table_LightEndTable"
+                  ]
+                </xpath>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+	
+	
+	<!-- Vanilla Factions Expanded - Vikings compatability -->
+  <!--<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Vikings</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName="VFEV_FurBed" or 
+				defName="VFEV_DoubleFurBed"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
+				text()="Table_Wardrobe" or 
+				text()="Table_LightEndTable"]</xpath>
+			</li>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName="VFEV_FurBed" or 
+				defName="VFEV_DoubleFurBed"
+				]/researchPrerequisites</xpath>
+			</li>
+		</operations>
+		</match>
+	</Operation>-->
+
+
+  <!-- Vanilla Factions Expanded - Tribals compatability -->
+  <!--<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Tribals</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/RitualOutcomeEffectDef[defName="VFET_TribalGathering_Outcome"]/comps/li[@Class="RitualOutcomeComp_RitualTargetDefs"]/defs/li[text()="Stone_Campfire"]</xpath>
+			</li>
+		</operations>
+		</match>
+	</Operation>-->
+
+
+  <!-- Replace Stuff Compatibility -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Replace Stuff Mod Compatibility</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedFurniture"]/replaceLists/li[category="EndTables"]/items/li[
+				text()="Table_LightEndTable"
+				]</xpath>
+			</li>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedFurniture"]/replaceLists/li[category="Lights"]/items/li[
+				text()="Table_LightEndTable"
+				]</xpath>
+			</li>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedFurniture"]/replaceLists/li[category="Wardrobes"]
+				</xpath>
+			</li>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedFurniture"]/replaceLists/li[items/li="Campfire"]</xpath>
+			</li>
+		</operations>
+		</match>
+	</Operation>
+	
+	
+	<!-- Big and Small Furniture compatability -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Big and Small Furniture</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName = "BS_Giant_Bed_Ergonomic" or
+				defName = "BS_Giant_Bed_DoubleErgonomic"
+				]/designationCategory</xpath>
+				<value>			
+					<designationCategory>
+					</designationCategory>
+				</value>
+			</li>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName = "BS_Giant_Bed_Ergonomic" or
+				defName = "BS_Giant_Bed_DoubleErgonomic"
+				]/researchPrerequisites</xpath>
+			</li>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[
+				defName = "BS_Giant_Bed_Ergonomic" or
+				defName = "BS_Giant_Bed_DoubleErgonomic" or
+				defName = "BS_Giant_Bed_Kingsize"
+				]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
+				text()="Table_Wardrobe" or 
+				text()="Table_LightEndTable"]</xpath>
+			</li>
+		</operations>
+		</match>
+	</Operation>
+	
+	
+	<!-- Remove the ExFurniture building category -->	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef/designationCategory[text()="AOMorefurniture"]</xpath>
+		<value>
+			<designationCategory>Furniture</designationCategory>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/DesignationCategoryDef[defName="AOMorefurniture"]</xpath>
+	</Operation>
+	
+</Patch>

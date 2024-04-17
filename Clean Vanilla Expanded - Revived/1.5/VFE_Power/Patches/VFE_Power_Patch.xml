@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- Buildings_AdvancedPower.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VFE_AdvancedWindTurbine" or
+		defName="VFE_AdvancedSolarGenerator" or
+		defName="VFE_AdvancedWatermillGenerator" or
+		defName="VPE_AdvancedGeothermalGenerator"]</xpath>
+	</Operation>
+	
+	<!-- Buildings_Batteries.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VFE_LargeBattery" or 
+		defName="VFE_SmallBattery" or
+		defName="VFE_LargeAdvancedBattery"]</xpath>
+	</Operation>
+
+	<!-- Buildings_Power.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VFE_PortableWoodFiredGenerator" or
+		defName="VFE_IndustrialWoodFiredGenerator" or
+		defName="VFE_IndustrialChemfuelPoweredGenerator"]</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_PortableChemfuelPoweredGenerator"]/comps/li[@Class="CompProperties_Refuelable"]/fuelCapacity</xpath>
+		<value>
+			<fuelCapacity>10.0</fuelCapacity>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_PortableChemfuelPoweredGenerator"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+		<value>
+			<basePowerConsumption>-300</basePowerConsumption>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VFE_TidalGenerator"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+		<value>
+			<basePowerConsumption>-1600</basePowerConsumption>
+		</value>
+	</Operation>
+
+	<!-- Buildings_Special.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ThingDef[
+		defName="VFE_SmallVanometricPowerCell" or 
+		defName="VFE_LargeVanometricPowerCell"]</xpath>
+	</Operation>
+
+	<!-- Buildings_Nuclear.xml -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Dubs Rimatomics</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ThingDef[defName="VPE_NuclearGenerator"]</xpath>
+			</li>
+			
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/ResearchProjectDef[defName="VFE_NuclearPower"]</xpath>
+			</li>
+			</operations>
+		</match>
+		<nomatch Class="PatchOperationReplace">
+			<xpath>/Defs/ResearchProjectDef[defName="VFE_NuclearPower"]/prerequisites</xpath>
+			<value>
+				<prerequisites>
+					<li>MultiAnalyzer</li>
+				</prerequisites>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ResearchProjects_2_Electricity.xml -->
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[
+		defName="VFE_IndustrialGenerators"]</xpath>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>/Defs/ResearchProjectDef[defName="VFE_AdvancedPowerSources"]</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ResearchProjectDef[defName="VFE_AdvancedBatteries"]/prerequisites</xpath>
+		<value>
+			<li>MultiAnalyzer</li>
+		</value>
+	</Operation>
+	
+	
+	<!-- Replace Stuff Mod Compatibility compatability -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Replace Stuff Mod Compatibility</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<li Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedPower"]/replaceLists/li[
+				category="PoweredGenerators" or
+				category="SolarGenerators"
+				]
+				</xpath>
+			</li>
+		</operations>
+		</match>
+	</Operation>
+
+</Patch>

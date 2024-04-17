@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+<!-- RangedIndustrialQuickdraw.xml -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_BullpupRifle"]/statBases/AccuracyTouch</xpath>
+		<value>
+			<AccuracyTouch>0.75</AccuracyTouch>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_BullpupRifle"]/statBases/AccuracyLong</xpath>
+		<value>
+			<AccuracyLong>0.45</AccuracyLong>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_BullpupDMR"]/recipeMaker/researchPrerequisite</xpath>
+		<value>
+			<researchPrerequisite>VWE_Quickdraw</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_PDW"]</xpath>
+		<value>
+			<weaponTags>
+				<li>IndustrialGunAdvanced</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_PDW"]/verbs/li</xpath>
+		<value>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_MachinePistol</defaultProjectile>
+				<warmupTime>0.05</warmupTime>
+				<range>19.9</range>
+				<burstShotCount>5</burstShotCount>
+				<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+				<soundCast>Shot_MachinePistol</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

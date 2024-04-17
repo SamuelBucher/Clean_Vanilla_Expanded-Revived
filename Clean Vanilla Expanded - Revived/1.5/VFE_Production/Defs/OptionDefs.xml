@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<XmlExtensions.SettingsMenuDef>
+		<defName>toggleBigBootyBenches</defName>
+		<modId>SamBucher.CleanVE2</modId>
+		<label>Clean Vanilla Expanded - Revived</label>
+		<settings>
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<key>bigBenchToggle</key>
+				<label>Disable large production benches</label>
+				<defaultValue>true</defaultValue>
+			</li>
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+</Defs>
