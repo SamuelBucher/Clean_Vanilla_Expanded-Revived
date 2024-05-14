@@ -26,7 +26,7 @@
 			</costList>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VWE_SmokeGrenade"]/recipeMaker/researchPrerequisite</xpath>
 	</Operation>
 
@@ -36,7 +36,7 @@
 		</mods>
 		<nomatch Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[
 				@Name="BaseOPToxMakeableGrenade" or
 				@Name="BaseOPToxGrenadeProjectile" or
@@ -46,7 +46,7 @@
 				defName="VWE_Projectile_FlashGrenade"]</xpath>
 			</li>
 
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ResearchProjectDef[defName="VWE_TacticalGrenades"]</xpath>
 			</li>
 		</operations>
@@ -54,7 +54,7 @@
 	</Operation>	
 
 	<!-- MeleeMedieval.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VWE_MeleeWeapon_Pickaxe" or
 		defName="VWE_MeleeWeapon_Hammer" or
@@ -63,7 +63,7 @@
 	</Operation>
 
 <!-- MeleeNeolithic.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VWE_MeleeWeapon_Axe"]</xpath>
 	</Operation>
 
@@ -93,7 +93,7 @@
 		</value>
 	</Operation>
 	
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VWE_Throwing_Knives" or
 		defName="VWE_FlyingBlade" or
@@ -102,7 +102,7 @@
 	</Operation>
 
 <!-- RangedNeolithic.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VWE_Throwing_Rocks" or
 		defName="VWE_Rock"]</xpath>
@@ -114,13 +114,13 @@
 		</mods>
 		<nomatch Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[
 				defName="VWE_Bow_Long" or
 				defName="VWE_Arrow_Long"]</xpath>
 			</li>
 			
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ResearchProjectDef[defName="VWE_Longbow"]</xpath>
 			</li>
 		</operations>
@@ -211,7 +211,7 @@
 	</Operation>
 
 <!-- MeleeIndustrial.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VWE_MeleeWeapon_Shovel" or
 		defName="VWE_MeleeWeapon_Baton" or
@@ -269,7 +269,7 @@
 			 <ComponentIndustrial>10</ComponentIndustrial>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]/equippedStatOffsets</xpath>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -281,7 +281,7 @@
 		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VWE_Bullet_HandCannon" or
 		defName="VWE_Gun_HandCannon" or
@@ -352,7 +352,7 @@
 		<mods>
 			<li>Vanilla Furniture Expanded - Security</li>
 		</mods>
-		<nomatch Class="XmlExtensions.PatchOperationSafeRemove">
+		<nomatch Class="PatchOperationRemove">
 				<xpath>/Defs/ResearchProjectDef[defName="VWE_TrenchWarfare"]</xpath>
 		</nomatch>
 	</Operation>
@@ -366,14 +366,14 @@
 		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ResearchProjectDef[
 		defName="VWE_Tools" or
 		defName="VWE_SpecializedFirearms"]</xpath>
 	</Operation>
 
 <!-- Achievements.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 	  <xpath>Defs/AchievementsExpanded.AchievementDef[defName="poshRockLobber" or defName="gunsGallore"]</xpath>
 	</Operation>
 	

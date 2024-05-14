@@ -9,14 +9,8 @@
   <packageId>SamBucher.CleanVE2</packageId>
   <description>Clean Vanilla Expanded is back.
   </description>
-  <modDependencies>
-    <li>
-      <packageId>imranfish.xmlextensions</packageId>
-      <displayName>XML Extensions</displayName>
-      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206</steamWorkshopUrl>
-    </li>
-  </modDependencies>
   <loadAfter>
+	<li>imranfish.xmlextensions</li>
 	<li>VanillaExpanded.VWE</li>
 	<li>VanillaExpanded.VWEC</li>
 	<li>VanillaExpanded.VWEQ</li>

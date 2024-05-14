@@ -9,7 +9,7 @@
 		<description>A crude table cluttered with instruments that supposedly make surgery easier. Slightly improves surgery outcomes over normal beds, but impairs recovery from wounds and disease.</description>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="Bed_OperatingTable"]/statBases/MedicalTendQualityOffset</xpath>
 	</Operation>
 	<Operation Class="PatchOperationReplace">

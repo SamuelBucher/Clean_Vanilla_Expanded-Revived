@@ -44,7 +44,7 @@
 	</Operation>
 
 	<!-- Buildings_AdvancedTraps.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VFES_ChemfuelBarrel" or
 		defName="VFES_Landmine" or
@@ -54,7 +54,7 @@
 	</Operation>
 
 	<!-- Buildings_AdvancedTurrets.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VFES_Turret_AutocannonDouble" or
 		defName="VFES_TurretDoubleAutocannon_Top"]</xpath>
@@ -98,7 +98,7 @@
 	</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VFES_Turret_Artillery"]/building/buildingTags/li[text()="Artillery_BaseDestroyer"]</xpath>
 	</Operation>
 
@@ -124,7 +124,7 @@
 			<WoodLog>10</WoodLog>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VFES_Platform"]</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAttributeSet">
@@ -132,10 +132,10 @@
 		<attribute>ParentName</attribute>
 		<value>BuildingBase</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VFES_AmmoCrate"]/researchPrerequisites</xpath>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VFES_AmmoCrate"]/designationCategory</xpath>
 	</Operation>
 
@@ -158,7 +158,7 @@
 		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VFES_Turret_SentryGun" or
 		defName="VFES_Gun_SentryTurret"]</xpath>
@@ -267,7 +267,7 @@
 	</Operation>
 
 	<!-- Terrain_Special.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/TerrainDef[defName="VFES_PlatformTerrain"]</xpath>
 	</Operation>
 
@@ -284,7 +284,7 @@
 	</Operation>
 
 	<!-- ResearchProjects_Various.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ResearchProjectDef[
 		defName="VFES_SentryGuns"]</xpath>
 	</Operation>
@@ -297,7 +297,7 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedSecurity"]/replaceLists/li[items/li=
 				"VFES_Turret_SentryGun" or 
 				"Turret_Autocannon" or 

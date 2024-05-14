@@ -2,74 +2,84 @@
 
 <Patch>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		<xpath>/Defs/RoyalTitleDef[defName="Acolyte" or defName="Knight" or defName="Praetor" or defName="Baron" or defName="Count" or @Name="BaseEmpireTitleNPC"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][disablingPrecepts/li="SlabBed_Preferred"]/things/li[
-		text()="Bed_DoubleErgonomic"]</xpath>
-	</Operation>
-
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		<xpath>/Defs/RoyalTitleDef[defName="Knight" or defName="Praetor" or defName="Baron" or defName="Count" or @Name="BaseEmpireTitleNPC"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][things/li="EndTable"]/things/li[text()="Table_LightEndTable"]</xpath>
-	</Operation>
-
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		<xpath>/Defs/ThingDef[defName="Campfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
-	</Operation>
-
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Vanilla Factions Expanded - Vikings</li>
+			<li>Vanilla Furniture Expanded</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>/Defs/ThingDef[defName="VFEV_Hearth"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/RoyalTitleDef[defName="Acolyte" or defName="Knight" or defName="Praetor" or defName="Baron" or defName="Count" or @Name="BaseEmpireTitleNPC"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][disablingPrecepts/li="SlabBed_Preferred"]/things/li[
+				text()="Bed_DoubleErgonomic"]</xpath>
+			</li>
+
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/RoyalTitleDef[defName="Knight" or defName="Praetor" or defName="Baron" or defName="Count" or @Name="BaseEmpireTitleNPC"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][things/li="EndTable"]/things/li[text()="Table_LightEndTable"]</xpath>
+			</li>
+
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Campfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+			</li>
+
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Factions Expanded - Vikings</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationRemove">
+						<xpath>/Defs/ThingDef[defName="VFEV_Hearth"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+					</li>
+				</operations>
+				</match>
+			</li>
+
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Factions Expanded - Medieval</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationRemove">
+						<xpath>Defs/ThingDef[defName="VFEM_Candle"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+					</li>
+				</operations>
+				</match>
+			</li>
+
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Factions Expanded - Empire</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationFindMod">
+							<mods>
+								<li>Vanilla Furniture Expanded</li>
+							</mods>
+							<match Class="PatchOperationSequence">
+								<operations>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/RoyalTitleDef[defName = "Duke" or  defName = "VFEE_Archcount" or defName = "Consul" or defName = "VFEE_Marquess" or defName = "VFEE_Archduke" or defName = "VFEE_Magister" or defName = "VFEE_Despot" or defName = "VFEE_HighStellarch"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][disablingPrecepts/li="SlabBed_Preferred"]/things
+										/li[
+										text()="Bed_DoubleErgonomic"
+										]</xpath>
+									</li>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/RoyalTitleDef[defName = "Duke" or  defName = "VFEE_Archcount" or defName = "Consul" or defName = "VFEE_Marquess" or defName = "VFEE_Archduke" or defName = "VFEE_Magister" or defName = "VFEE_Despot" or defName = "VFEE_HighStellarch"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][things/li="EndTable"]/things
+										/li[
+										text()="Table_LightEndTable"
+										]</xpath>
+									</li>
+								</operations>
+							</match>
+						</li>
+					</operations>
+				</match>
 			</li>
 		</operations>
 		</match>
 	</Operation>
-
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Factions Expanded - Medieval</li>
-		</mods>
-		<match Class="PatchOperationSequence">
-		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/ThingDef[defName="VFEM_Candle"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
-			</li>
-		</operations>
-		</match>
-	</Operation>
-
-	<Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Vanilla Factions Expanded - Empire</li>
-        </mods>
-        <match Class="PatchOperationSequence">
-            <operations>
-                <li Class="PatchOperationFindMod">
-					<mods>
-						<li>Vanilla Furniture Expanded</li>
-					</mods>
-					<match Class="PatchOperationSequence">
-						<operations>
-							<li Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>Defs/RoyalTitleDef[defName = "Duke" or  defName = "VFEE_Archcount" or defName = "Consul" or defName = "VFEE_Marquess" or defName = "VFEE_Archduke" or defName = "VFEE_Magister" or defName = "VFEE_Despot" or defName = "VFEE_HighStellarch"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][disablingPrecepts/li="SlabBed_Preferred"]/things
-								/li[
-								text()="Bed_DoubleErgonomic"
-								]</xpath>
-							</li>
-							<li Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>Defs/RoyalTitleDef[defName = "Duke" or  defName = "VFEE_Archcount" or defName = "Consul" or defName = "VFEE_Marquess" or defName = "VFEE_Archduke" or defName = "VFEE_Magister" or defName = "VFEE_Despot" or defName = "VFEE_HighStellarch"]/bedroomRequirements/li[@Class="RoomRequirement_ThingAnyOf"][things/li="EndTable"]/things
-								/li[
-								text()="Table_LightEndTable"
-								]</xpath>
-							</li>
-						</operations>
-					</match>
-				</li>
-            </operations>
-        </match>
-    </Operation>
 
 </Patch>

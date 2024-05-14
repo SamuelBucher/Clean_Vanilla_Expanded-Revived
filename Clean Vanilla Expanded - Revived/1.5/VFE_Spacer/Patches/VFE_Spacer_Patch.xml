@@ -45,7 +45,7 @@
 	</Operation>
 
 	<!-- Buildings_Joy.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="UltrascreenTV"]</xpath>
 	</Operation>
 
@@ -127,7 +127,7 @@
 			<Comfort>0.85</Comfort>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="Bed_AdvBed" or 
 		defName="Bed_AdvDoubleBed"
@@ -166,7 +166,7 @@
 		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="Table_IlluminatedEndTable" or 
 		defName="Table_IlluminatedDresser"
@@ -178,7 +178,7 @@
 		<xpath>/Defs/ThingDef[defName="SleepAccelerator"]</xpath>
 		<match Class="PatchOperationSequence">
 		<operations>
-<!-- 			<li Class="XmlExtensions.PatchOperationSafeRemove">
+<!-- 			<li Class="PatchOperationRemove">
 				<xpath>/Defs/HediffDef[defName="Bed_RefreshingSleep"]</xpath>
 			</li> -->
 			
@@ -255,29 +255,29 @@
 	</Operation>
 
 <!-- JoyGiver_Patch.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
         <xpath>Defs/JoyGiverDef[defName="WatchTelevision"]/thingDefs/li[text()="UltrascreenTV"]
         </xpath>
     </Operation>
 
 <!-- MegascreenTelevision.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="MegascreenTelevision"]/researchPrerequisites</xpath>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="MegascreenTelevision"]/designationCategory</xpath>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="MegascreenTelevision"]/constructionSkillPrerequisite</xpath>
 	</Operation>
 
 <!-- Linkables_Patch.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[@Name = "BasicBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities/li[
 		text()="Table_IlluminatedEndTable" or 
 		text()="Table_IlluminatedDresser"]</xpath>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="HospitalBed" or
 		defName="Bedroll" or
@@ -318,7 +318,7 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>Defs/Replace_Stuff_Compatibility.InterchangeableItems[defName="ReplaceStuffModCompat_VanillaExpandedSpacer"]/replaceLists/li[
 				category="TVs"
 				]

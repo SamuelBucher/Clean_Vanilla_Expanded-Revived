@@ -3,7 +3,7 @@
 <Patch>
 
 <!-- FishDefs.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/VCE_Fishing.FishDef[
 		defName="VCEF_AnchovyFish" or 
 		defName="VCEF_AngelfishFish" or 
@@ -69,7 +69,7 @@
 	</Operation>
 
 <!-- Items_Resource_Fish.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VCEF_RawAnchovy" or 
 		defName="VCEF_RawAngelfish" or 
@@ -130,7 +130,7 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ItemProcessor.CombinationDef[
 				defName="VFEM_AquaponicsBasin_Anchovy" or
 				defName="VFEM_AquaponicsBasin_Angelfish" or
@@ -167,10 +167,10 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawAnchovy | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawAngelfish | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawBass | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawCatfish | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawGoldfish | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawGuppy | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawKoi | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawMinnow | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawPerch | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawPiranha | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawSalmon | Defs/ThingDef[defName = "PRF_T1_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawTrout</xpath>
 			</li>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawAnchovy | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawAngelfish | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawAnglerfish | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawBass | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawClownfish | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawCod | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawEel | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawHaddock | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawHalibut | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawHerring | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawLobster | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawPufferfish | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawSalmon | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawSprat | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawSwordfish | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawTrout | Defs/ThingDef[defName = "PRF_T2_Aquaculture"]/modExtensions/li[@Class="ProjectRimFactory.Common.ModExtension_ModifyProduct"]/bonusYields/VCEF_RawTuna</xpath>
 			</li>
 			<li Class="PatchOperationAdd">

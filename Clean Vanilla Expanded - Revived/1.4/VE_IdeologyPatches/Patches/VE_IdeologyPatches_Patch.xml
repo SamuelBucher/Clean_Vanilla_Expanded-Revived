@@ -2,53 +2,60 @@
 
 <Patch>
 
-		<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		  <xpath>/Defs/RitualObligationTargetFilterDef[defName="RitualSpotOrCampfireParty"]/thingDefs/li[text()="Stone_Campfire"]</xpath>
-		</Operation>
-		<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		  <xpath>/Defs/RitualOutcomeEffectDef[defName="CelebrationPartyDanceDrum"]/comps/li[@Class="RitualOutcomeComp_RitualTargetDefs"]/defs/li[text()="Stone_Campfire"]</xpath>
-		</Operation>
-		<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		  <xpath>/Defs/RitualBehaviorDef[defName="CelebrationPartyDanceDrum"]/stages/li[defaultDuty="PartyDance"]/failTriggers/li[onlyIfTargetIsOfDef="Stone_Campfire"]</xpath>
-		</Operation>
-		<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		  <xpath>/Defs/ThingDef[defName="Drum"]/placeWorkers/li[text()="VEIP.PlaceWorker_LinkToStoneCampfire"]</xpath>
-		</Operation>
-		<!--<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		  <xpath>/Defs/ThingDef[defName="Campfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
-		</Operation>-->
-		<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		  <xpath>/Defs/ThingDef[defName="Stone_DarklightCampfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
-		</Operation>
-
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Vanilla Factions Expanded - Vikings</li>
+			<li>Vanilla Furniture Expanded</li>
 		</mods>
 		<match Class="PatchOperationSequence">
-		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>/Defs/ThingDef[defName="VFEV_DarkHearth"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
-			</li>
-		</operations>
-		</match>
-	</Operation>
+			<operations>				
 
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Factions Expanded - Medieval</li>
-		</mods>
-		<match Class="PatchOperationSequence">
-		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>/Defs/ThingDef[
-				defName="VFEM_WallTorchDarkLamp" or
-				defName="VFEM_DarkCandle"
-				]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
-			</li>
-		</operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/RitualObligationTargetFilterDef[defName="RitualSpotOrCampfireParty"]/thingDefs/li[text()="Stone_Campfire"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/RitualOutcomeEffectDef[defName="CelebrationPartyDanceDrum"]/comps/li[@Class="RitualOutcomeComp_RitualTargetDefs"]/defs/li[text()="Stone_Campfire"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/RitualBehaviorDef[defName="CelebrationPartyDanceDrum"]/stages/li[defaultDuty="PartyDance"]/failTriggers/li[onlyIfTargetIsOfDef="Stone_Campfire"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="Drum"]/placeWorkers/li[text()="VEIP.PlaceWorker_LinkToStoneCampfire"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="Stone_DarklightCampfire"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+				</li>
+
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Factions Expanded - Vikings</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationRemove">
+								<xpath>/Defs/ThingDef[defName="VFEV_DarkHearth"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]</xpath>
+							</li>
+						</operations>
+					</match>
+				</li>
+
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Factions Expanded - Medieval</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationRemove">
+								<xpath>/Defs/ThingDef[
+							defName="VFEM_WallTorchDarkLamp" or
+							defName="VFEM_DarkCandle"
+							]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_BuildingDefsLit"]/defs/li[text()="Stone_Campfire"]					</xpath>
+							</li>
+						</operations>
+					</match>
+				</li>
+	
+			</operations>
 		</match>
-	</Operation>
-		
+	</Operation>		
 
 </Patch>

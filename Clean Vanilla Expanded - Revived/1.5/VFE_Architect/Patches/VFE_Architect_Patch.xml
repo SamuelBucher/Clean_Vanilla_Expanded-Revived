@@ -2,7 +2,7 @@
 
 <Patch>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/TerrainDef[
 		@Name="CobblestoneBase" or
 		@ParentName="CobblestoneBase" or
@@ -49,7 +49,7 @@
 		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VFEArch_SingleDoor" or
 		defName="VFEArch_SingleDoor_Flipped" or

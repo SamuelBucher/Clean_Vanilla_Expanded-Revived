@@ -3,14 +3,14 @@
 <Patch>
 
 	<!-- Achievements.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/AchievementsExpanded.AchievementDef[
 		defName="Juggernaut" or
 		defName="sierra117"]</xpath>
 	</Operation>
 
 	<!-- ResearchProjects_Various.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
 	</Operation>
 
@@ -20,7 +20,7 @@
 	</mods>
 	<nomatch Class="PatchOperationSequence">
 	<operations>
-		<li Class="XmlExtensions.PatchOperationSafeRemove">
+		<li Class="PatchOperationRemove">
 			<xpath>/Defs/ResearchProjectDef[defName="VAE_MilitaryClothing"]</xpath>
 		</li>
 		
@@ -34,7 +34,7 @@
 		</li>
 		
 		<!-- ThingCategories.xml -->
-		<li Class="XmlExtensions.PatchOperationSafeRemove">
+		<li Class="PatchOperationRemove">
 			<xpath>/Defs/ThingCategoryDef[defName="VAE_BootsAndGloves"]</xpath>
 		</li>
 	</operations>
@@ -52,21 +52,21 @@
 	</Operation>
 
 	<!-- Armor_Footwear.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VAE_Footwear_PlateBoots" or
 		defName="VAE_Footwear_MarineBoots"]</xpath>
 	</Operation>
 
 	<!-- Armor_Handwear.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VAE_Handwear_PlateGloves" or
 		defName="VAE_Handwear_MarineGloves"]</xpath>
 	</Operation>
 
 	<!-- Armor_Industrial.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/costList/Steel</xpath>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -124,7 +124,7 @@
 	</Operation>
 
 	<!-- Armor_Medieval.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VAE_Apparel_Gambeson" or
 		defName="VAE_Apparel_PlateShoulderpads" or
@@ -138,7 +138,7 @@
 		</mods>
 		<nomatch Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]</xpath>
 			</li>
 		</operations>
@@ -165,7 +165,7 @@
 	</Operation>
 
 	<!-- Armor_Neolithic.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VAE_Headgear_StoneWarMask"]</xpath>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -182,7 +182,7 @@
 	</Operation>
 
 	<!-- Armor_Spacer.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VAE_Headgear_TrooperHelmet" or
 		defName="VAE_Apparel_TrooperArmor"]</xpath>
@@ -195,14 +195,14 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[
 				defName="VAE_Headgear_HeavyMarineHelmet" or
 				defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
 			</li>
 
 			<!-- Royalty.xml -->			
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[
 				defName="VAE_Headgear_RoyalTrooperHelmet" or
 				defName="VAE_Apparel_RoyalTrooperArmor" or
@@ -210,31 +210,31 @@
 				defName="VAE_Apparel_RoyalSiegeArmor"]</xpath>
 			</li>
 			
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/PawnKindDef[@Name="CataphractBase"]/apparelRequired/li[
 				text()="VAE_Handwear_MarineGloves" or 
 				text()="VAE_Footwear_MarineBoots"]</xpath>
 			</li>
 			
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/PawnKindDef[@Name="ImperialFighterBase"]/apparelRequired/li[
 				text()="VAE_Footwear_PlateBoots"]</xpath>
 			</li>
 			
 			<!-- ResearchProjects_Various.xml -->
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ResearchProjectDef[
 				defName="VAE_SiegebreakerArmor" or
 				defName="VAE_LeatherTanning"]</xpath>
 			</li>
 
 			<!-- Achievements.xml -->
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/AchievementsExpanded.AchievementDef[defName="leatherThatsKinky"]</xpath>
 			</li>
 
 			<!-- Armor_Medieval.xml -->
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li Class="PatchOperationRemove">
 				<xpath>/Defs/ThingDef[defName="VAE_Apparel_QuiltedVest"]</xpath>
 			</li>
 		</operations>
@@ -260,12 +260,12 @@
 	
 
 	<!-- Headgear_Industrial.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VAE_Headgear_Balaclava"]</xpath>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/costList/ComponentIndustrial</xpath>
 	</Operation>
 	<Operation Class="PatchOperationReplace">

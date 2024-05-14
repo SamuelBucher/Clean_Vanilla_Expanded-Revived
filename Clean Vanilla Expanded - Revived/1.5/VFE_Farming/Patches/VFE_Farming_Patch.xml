@@ -3,7 +3,7 @@
 <Patch>
 
 	<!-- Buildings_Misc.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[
 		defName="VFE_Scarecrow" or
 		defName="VFE_AnimalFeeder"]</xpath>
@@ -11,7 +11,7 @@
 	
 	
 	<!-- Buildings_Growers_Tilable.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<!--defName="VFE_PlanterBox_Tilable" or-->
 		<xpath>/Defs/ThingDef[
 		defName="VFE_Hydroponics_Tilable" or
@@ -48,7 +48,7 @@
 	
 	
 	<!-- ResearchProjects_VFE.xml -->
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ResearchProjectDef[defName="VFE_Res_FarmingTechniques"]</xpath>
 	</Operation>
 	
@@ -65,22 +65,31 @@
 			<li>Dubs Bad Hygiene</li>
 		</mods>
 		<match Class="PatchOperationSequence">
-		<operations>
-			<!-- Buildings_Misc.xml -->
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>/Defs/ThingDef[defName="VFE_Sprinkler"]</xpath>
-			</li>
+			<operations>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Niilo's QoL</li>
+					</mods>
+					<nomatch Class="PatchOperationSequence">
+						<operations>
+							<!-- Buildings_Misc.xml -->
+							<li Class="PatchOperationRemove">
+								<xpath>/Defs/ThingDef[defName="VFE_Sprinkler"]</xpath>
+							</li>
 
-			<!-- ResearchProjects_VFE.xml -->
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>/Defs/ResearchProjectDef[defName="VFE_Res_Sprinkler"]</xpath>
-			</li>
+							<!-- ResearchProjects_VFE.xml -->
+							<li Class="PatchOperationRemove">
+								<xpath>/Defs/ResearchProjectDef[defName="VFE_Res_Sprinkler"]</xpath>
+							</li>
 
-			<!-- Motes.xml -->
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>/Defs/ThingDef[defName="VFEF_Mote_SprinklerWater"]</xpath>
-			</li>
-		</operations>
+							<!-- Motes.xml -->
+							<li Class="PatchOperationRemove">
+								<xpath>/Defs/ThingDef[defName="VFEF_Mote_SprinklerWater"]</xpath>
+							</li>
+						</operations>
+					</nomatch>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
