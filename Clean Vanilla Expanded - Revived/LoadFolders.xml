@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <loadFolders>
 	<v1.4>
 		<li>/</li>
 		<li>1.4</li>
+		<li IfModActive="imranfish.xmlextensions">1.4/XMLOptions</li>
 		<li IfModActive="oskarpotocki.vanillaexpanded.ideologypatches">1.4/VE_IdeologyPatches</li>
 		<li IfModActive="oskarpotocki.vanillaexpanded.royaltypatches">1.4/VE_RoyaltyPatches</li>
 		<li IfModActive="VanillaExpanded.VFECore">1.4/VFE_Core</li>
@@ -20,21 +20,22 @@
 		<li IfModActive="vanillaexpanded.vwec" IfModNotActive="CETeam.CombatExtended">1.4/VWE_Coilguns</li>
 		<li IfModActive="vanillaexpanded.vweq" IfModNotActive="CETeam.CombatExtended">1.4/VWE_Quickdraw</li>
 	</v1.4>
-  <v1.5>
-    <li>/</li>
-    <li>1.5</li>
-    <li IfModActive="VanillaExpanded.VFECore">1.5/VFE_Core</li>
-    <li IfModActive="vanillaexpanded.vfearchitect">1.5/VFE_Architect</li>
-    <li IfModActive="VanillaExpanded.vfefarming">1.5/VFE_Farming</li>
-    <li IfModActive="VanillaExpanded.vfemedical">1.5/VFE_Medical</li>
-    <li IfModActive="VanillaExpanded.vfepower">1.5/VFE_Power</li>
-    <li IfModActive="vanillaexpanded.vfeproduction">1.5/VFE_Production</li>
-    <li IfModActive="VanillaExpanded.vfesecurity" IfModNotActive="CETeam.CombatExtended">1.5/VFE_Security</li>
-    <li IfModActive="VanillaExpanded.vfespacer">1.5/VFE_Spacer</li>
-    <li IfModActive="vanillaexpanded.varme" IfModNotActive="CETeam.CombatExtended">1.5/VE_Armour</li>
-    <li IfModActive="VanillaExpanded.vcef">1.5/VE_Fishing</li>
-    <li IfModActive="vanillaexpanded.vwe" IfModNotActive="CETeam.CombatExtended">1.5/VWE</li>
-    <li IfModActive="vanillaexpanded.vwec" IfModNotActive="CETeam.CombatExtended">1.5/VWE_Coilguns</li>
-    <li IfModActive="vanillaexpanded.vweq" IfModNotActive="CETeam.CombatExtended">1.5/VWE_Quickdraw</li>
-  </v1.5>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="imranfish.xmlextensions">1.5/XMLOptions</li>
+		<li IfModActive="VanillaExpanded.VFECore">1.5/VFE_Core</li>
+		<li IfModActive="vanillaexpanded.vfearchitect">1.5/VFE_Architect</li>
+		<li IfModActive="VanillaExpanded.vfefarming">1.5/VFE_Farming</li>
+		<li IfModActive="VanillaExpanded.vfemedical">1.5/VFE_Medical</li>
+		<li IfModActive="VanillaExpanded.vfepower">1.5/VFE_Power</li>
+		<li IfModActive="vanillaexpanded.vfeproduction">1.5/VFE_Production</li>
+		<li IfModActive="VanillaExpanded.vfesecurity" IfModNotActive="CETeam.CombatExtended">1.5/VFE_Security</li>
+		<li IfModActive="VanillaExpanded.vfespacer">1.5/VFE_Spacer</li>
+		<li IfModActive="vanillaexpanded.varme" IfModNotActive="CETeam.CombatExtended">1.5/VE_Armour</li>
+		<li IfModActive="VanillaExpanded.vcef">1.5/VE_Fishing</li>
+		<li IfModActive="vanillaexpanded.vwe" IfModNotActive="CETeam.CombatExtended">1.5/VWE</li>
+		<li IfModActive="vanillaexpanded.vwec" IfModNotActive="CETeam.CombatExtended">1.5/VWE_Coilguns</li>
+		<li IfModActive="vanillaexpanded.vweq" IfModNotActive="CETeam.CombatExtended">1.5/VWE_Quickdraw</li>
+	</v1.5>
 </loadFolders>
